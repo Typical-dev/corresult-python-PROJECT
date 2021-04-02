@@ -7,8 +7,8 @@ def getDataSource(data_path):
     with open(data_path) as csv_file:
         csv_reader = csv.DictReader(csv_file)
         for row in csv_reader:
-            cold_drink_sales.append(float(row("Ice-cream Sales")))
-            ice_cream_sales.append(float(row("Temperature")))
+            cold_drink_sales.append(float(row["Ice-cream Sales"]))
+            ice_cream_sales.append(float(row["Temperature"]))
         return{"x": ice_cream_sales, "y": cold_drink_sales}
 def findCorrelation(data_source):
     correlation = np.corrcoef(data_source["x"],data_source["y"])
